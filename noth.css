@@ -1,0 +1,91 @@
+html,body {
+	height: 100%;
+	margin: 0;
+  }
+  canvas{
+	position: absolute; top: 50px; left: 550px;
+  }
+  #score{
+	  font-size: 30px;
+	  position: relative; left: 300px;
+	  top: 100px;
+	width: 30px; height: 30px;
+	animation: instruct 5s linear infinite;
+  }
+  #sc{
+	font-size: 30px;
+	  position: relative; left: 300px;
+	  top: 100px;
+	  width: 30px; height: 30px;
+	  animation: gg 5s linear infinite;
+  }
+  #intructions{
+	font-size: 30px;
+	  position: relative; left: 300px;
+	  top: 200px;
+	width:350px; height: 20px;
+	animation: hg 5s linear infinite;
+  }
+  
+  @keyframes instruct{
+	0%{
+		  color: green;
+	  }
+	20%{
+		  color: greenyellow;
+	  }
+	60%{
+		  color: orange;
+	  }
+	80%{
+		  color: red;
+	  }
+	85%{
+	  color: violet;
+	}
+	  100%{
+		  color: blue;
+	  }
+  }
+  
+  @keyframes gg{
+	0%{
+		  color: green;
+	  }
+	20%{
+		  color: greenyellow;
+	  }
+	60%{
+		  color: orange;
+	  }
+	80%{
+		  color: red;
+	  }
+	85%{
+	  color: violet;
+	}
+	  100%{
+		  color: blue;
+	  }
+  }
+
+  @keyframes hg{
+	0%{
+		  color: green;
+	  }
+	20%{
+		  color: greenyellow;
+	  }
+	60%{
+		  color: orange;
+	  }
+	80%{
+		  color: red;
+	  }
+	85%{
+	  color: violet;
+	}
+	  100%{
+		  color: blue;
+	  }
+  }
