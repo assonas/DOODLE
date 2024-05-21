@@ -125,7 +125,7 @@ function draw() {
     var centerOfCharacter = xPosition + 25; // Центральная точка персонажа (25 - половина ширины персонажа)
     if (centerOfCharacter >= platform.x && centerOfCharacter <= platform.x + platformWidth
         && yPosition + 70 >= platform.y && yPosition <= platform.y) {
-      if (!isJumping) {
+      if (!isJumping) {//находится ли персонаж на платформе, если да, то доступен новый прыжок
         isJumping = true; // Устанавливаем флаг прыжка
         currentJumpHeight = 0; // Сбрасываем текущую высоту прыжка
       }
