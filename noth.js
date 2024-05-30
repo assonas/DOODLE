@@ -81,7 +81,7 @@ function draw() {
 
     // Увеличиваем гравитацию в зависимости от счета
     if (gravity < maxGravity) {
-      gravity += score * gravityIncrement;
+      gravity += score + gravityIncrement;
     }
   }
 
