@@ -13,7 +13,7 @@ var jumpSpeed = 10; // Скорость прыжка
 var isJumping = false; // Флаг для отслеживания прыжка
 var currentJumpHeight = 0; // Текущая высота прыжка
 var gravity = 1; // Начальное значение гравитации
-var gravityIncrement = 0.001; // Величина увеличения гравитации
+var gravityIncrement = 0.00000001; // Величина увеличения гравитации
 var maxGravity = 3; // Максимальное значение гравитации
 var platformWidth = 100;
 var platformY = canvas.height - 50; // Начальная позиция платформ
@@ -40,12 +40,12 @@ bg.onload = drawImagesOnLoad;
 platform.onload = drawImagesOnLoad;
 
 // Пути к изображениям
-bg.src = "/DOODLE/GameModel/bg.png"
-if (prompt == '1') {unit.src = "/DOODLE/GameModel/unit.png"}
-if (prompt == '2') {unit.src = "/DOODLE/GameModel/unit2.png"}
-if (prompt == '3') {unit.src = "/DOODLE/GameModel/unit3.png"}
-if (prompt == '4') {unit.src = "/DOODLE/GameModel/unit4.png"}
-platform.src = "/DOODLE/GameModel/platform.png"
+bg.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/bg.png"
+if (prompt == '1') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit.png"}
+if (prompt == '2') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit2.png"}
+if (prompt == '3') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit3.png"}
+if (prompt == '4') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit4.png"}
+platform.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/platform.png"
 
 var xPosition = canvas.width / 2;
 var yPosition = canvas.height / 2;
@@ -81,7 +81,7 @@ function draw() {
 
     // Увеличиваем гравитацию в зависимости от счета
     if (gravity < maxGravity) {
-      gravity += score + gravityIncrement;
+      gravity += score * gravityIncrement;
     }
   }
 
