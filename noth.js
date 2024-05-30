@@ -12,7 +12,9 @@ var jumpHeight = 140; // Максимальная высота прыжка
 var jumpSpeed = 10; // Скорость прыжка
 var isJumping = false; // Флаг для отслеживания прыжка
 var currentJumpHeight = 0; // Текущая высота прыжка
-var gravity = 1; // Замедленная гравитация для плавного движения
+var gravity = 1; // Начальное значение гравитации
+var gravityIncrement = 0.05; // Величина увеличения гравитации
+var maxGravity = 3; // Максимальное значение гравитации
 var platformWidth = 100;
 var platformY = canvas.height - 50; // Начальная позиция платформ
 var platformX = (canvas.width - platformWidth) / 2; // Центр холста по горизонтали
@@ -22,6 +24,7 @@ var platformDropSpeed = 2; // Скорость опускания платфор
 var xVelocity = 4; // Горизонтальная скорость персонажа
 var xAcceleration = 3; // Горизонтальное ускорение персонажа
 var maxXVelocity = 5; // Максимальная горизонтальная скорость персонажа
+var score = 0; // Начальное значение счета
 
 // Функция для отрисовки изображений после их загрузки
 function drawImagesOnLoad() {
@@ -72,8 +75,14 @@ function draw() {
       platform.y += platformDropSpeed; // Опускаем платформы с заданной скоростью
     });
     platformDropped = true; // Устанавливаем флаг, чтобы сгенерировать новую платформу
-    var score = document.getElementById('score');
-    score.innerHTML = parseInt(score.innerHTML) + 1;
+    score++; // Увеличиваем счет
+    var scoreDisplay = document.getElementById('score');
+    scoreDisplay.innerHTML = score;
+
+    // Увеличиваем гравитацию в зависимости от счета
+    if (gravity < maxGravity) {
+      gravity += score * gravityIncrement;
+    }
   }
 
   // Генерируем новую платформу, если платформы были опущены
@@ -82,6 +91,7 @@ function draw() {
       return (prev.y < curr.y) ? prev : curr;
     });
     var newPlatformY = highestPlatform.y - 100; // Позиция по оси Y для новой платформы
+    
  
     var newPlatformX = Math.random() * (canvas.width - platformWidth); // Случайная позиция по оси X
     platforms.unshift({ x: newPlatformX, y: newPlatformY, image: platform }); // Добавляем новую платформу в начало массива
@@ -157,6 +167,7 @@ function moveCharacter(event) {
       break;
   }
 }
+
 
 function stopCharacter() {
   xVelocity = 0;
