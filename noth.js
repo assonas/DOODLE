@@ -108,6 +108,12 @@ function draw() {
   } else {
     yPosition += gravity; // Применяем гравитацию
   }
+  if (score.innerHTML > 2000){
+  gravity *= 2
+  }
+  if (score.innerHTML > 4000){
+    gravity *= 2
+  }
 
   // Проверяем условие для перезагрузки страницы
   if (yPosition >= canvas.height) {
