@@ -40,12 +40,12 @@ bg.onload = drawImagesOnLoad;
 platform.onload = drawImagesOnLoad;
 
 // Пути к изображениям
-bg.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/bg.png"
-if (prompt == '1') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit.png"}
-if (prompt == '2') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit2.png"}
-if (prompt == '3') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit3.png"}
-if (prompt == '4') {unit.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/unit4.png"}
-platform.src = "C:/Users/maskp/OneDrive/Рабочий стол/GameModel/platform.png"
+bg.src = "/DOODLE/GameModel/bg.png"
+if (prompt == '1') {unit.src = "/DOODLE/GameModel/unit.png"}
+if (prompt == '2') {unit.src = "/DOODLE/GameModel/unit2.png"}
+if (prompt == '3') {unit.src = "/DOODLE/GameModel/unit3.png"}
+if (prompt == '4') {unit.src = "/DOODLE/GameModel/unit4.png"}
+platform.src = "/DOODLE/GameModel/platform.png"
 
 var xPosition = canvas.width / 2;
 var yPosition = canvas.height / 2;
